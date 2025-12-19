@@ -1,0 +1,771 @@
+/* ========================================
+   GLOBAL STYLES FOR ESON INFOTECH - PASTEL THEME
+   ======================================== */
+
+/* CSS Variables - Pastel Color Palette & Typography Scale */
+:root {
+  /* Base Colors */
+  --primary-white: #FFFFFF;
+  --primary-black: #000000;
+  
+  /* Dark Light Black Text Colors */
+  --text-dark-black: #0D0D0D;        /* Midnight Black - Primary text */
+  --text-charcoal: #36454F;          /* Charcoal Black - Secondary text */
+  --text-matte: #282828;             /* Matte Black - Subtle text */
+  --text-slate: #2F4F4F;             /* Slate Black - Accent text */
+  --text-raven: #202124;             /* Raven Black - Headers */
+  
+  /* Your Beautiful Pastel Color Palette [web:178][web:179] */
+  --soft-pink: #FFB3BA;              /* Soft pink - used for primary elements */
+  --lavender: #BFAED9;               /* Light lavender - secondary accent */
+  --mint-green: #B4F2E1;             /* Mint green - fresh accent color */
+  --peach: #FFD1A0;                  /* Soft peach - warm accent */
+  --sky-blue: #3498db;               /* Baby blue - calming accent */
+  --lemon-yellow: #FFF2B3;           /* Pale yellow - bright accent */
+  --coral: #FFB5B5;                  /* Light coral - warm secondary */
+  --sage: #C8E6C9;                   /* Sage green - natural accent */
+
+  /* Typography Scale - Golden Ratio (1.618) */
+  --font-size-xs: clamp(0.75rem, 1vw, 0.875rem);    /* 12px - 14px */
+  --font-size-sm: clamp(0.875rem, 1.2vw, 1rem);     /* 14px - 16px */
+  --font-size-base: clamp(1rem, 1.5vw, 1.125rem);   /* 16px - 18px */
+  --font-size-md: clamp(1.125rem, 2vw, 1.25rem);    /* 18px - 20px */
+  --font-size-lg: clamp(1.25rem, 2.5vw, 1.5rem);    /* 20px - 24px */
+  --font-size-xl: clamp(1.5rem, 3vw, 2rem);         /* 24px - 32px */
+  --font-size-2xl: clamp(2rem, 4vw, 2.5rem);        /* 32px - 40px */
+  --font-size-3xl: clamp(2.5rem, 5vw, 3.5rem);      /* 40px - 56px */
+  --font-size-4xl: clamp(3.5rem, 6vw, 4.5rem);      /* 56px - 72px */
+  --font-size-5xl: clamp(4.5rem, 7vw, 6rem);        /* 72px - 96px */
+
+  /* Font Weights */
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.05em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.05em;
+  --letter-spacing-wider: 0.1em;
+  --letter-spacing-widest: 0.25em;
+
+  /* Spacing Scale */
+  --spacing-xs: 0.25rem;    /* 4px */
+  --spacing-sm: 0.5rem;     /* 8px */
+  --spacing-md: 1rem;       /* 16px */
+  --spacing-lg: 1.5rem;     /* 24px */
+  --spacing-xl: 2rem;       /* 32px */
+  --spacing-2xl: 3rem;      /* 48px */
+  --spacing-3xl: 4rem;      /* 64px */
+  --spacing-4xl: 6rem;      /* 96px */
+
+  /* Border Radius */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-xl: 1.25rem;
+  --border-radius-2xl: 1.5rem;
+  --border-radius-full: 9999px;
+
+  /* Shadows with Pastel Colors [web:178] */
+  --shadow-soft-pink: 0 4px 15px rgba(255, 179, 186, 0.3);
+  --shadow-lavender: 0 4px 15px rgba(191, 174, 217, 0.3);
+  --shadow-mint: 0 4px 15px rgba(180, 242, 225, 0.3);
+  --shadow-peach: 0 4px 15px rgba(255, 209, 160, 0.3);
+  --shadow-sky: 0 4px 15px rgba(52, 152, 219, 0.3);
+  --shadow-lemon: 0 4px 15px rgba(255, 242, 179, 0.3);
+  --shadow-coral: 0 4px 15px rgba(255, 181, 181, 0.3);
+  --shadow-sage: 0 4px 15px rgba(200, 230, 201, 0.3);
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+}
+
+/* Global Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* Base font size */
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-dark-black);
+  background-color: var(--primary-white);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  font-weight: var(--font-weight-normal);
+}
+
+/* ========================================
+   TYPOGRAPHY HIERARCHY
+   ======================================== */
+
+/* Headings */
+h1, .h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-black);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--text-raven);
+  margin-bottom: var(--spacing-lg);
+}
+
+h2, .h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--text-raven);
+  margin-bottom: var(--spacing-md);
+}
+
+h3, .h3 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--text-dark-black);
+  margin-bottom: var(--spacing-md);
+}
+
+h4, .h4 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--text-dark-black);
+  margin-bottom: var(--spacing-sm);
+}
+
+h5, .h5 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--text-charcoal);
+  margin-bottom: var(--spacing-sm);
+}
+
+h6, .h6 {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--text-charcoal);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Body Text */
+p, .text-body {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-dark-black);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Text Sizes */
+.text-xs { font-size: var(--font-size-xs); line-height: var(--line-height-normal); }
+.text-sm { font-size: var(--font-size-sm); line-height: var(--line-height-normal); }
+.text-base { font-size: var(--font-size-base); line-height: var(--line-height-normal); }
+.text-lg { font-size: var(--font-size-lg); line-height: var(--line-height-snug); }
+.text-xl { font-size: var(--font-size-xl); line-height: var(--line-height-tight); }
+.text-2xl { font-size: var(--font-size-2xl); line-height: var(--line-height-tight); }
+.text-3xl { font-size: var(--font-size-3xl); line-height: var(--line-height-tight); }
+
+/* ========================================
+   TEXT COLORS - DARK BLACK & PASTEL ACCENTS
+   ======================================== */
+
+/* Dark Light Black Text Colors */
+.text-dark-black { color: var(--text-dark-black) !important; }
+.text-charcoal { color: var(--text-charcoal) !important; }
+.text-matte { color: var(--text-matte) !important; }
+.text-slate { color: var(--text-slate) !important; }
+.text-raven { color: var(--text-raven) !important; }
+
+/* Pastel Accent Colors [web:178][web:179] */
+.text-soft-pink { color: var(--soft-pink) !important; }
+.text-lavender { color: var(--lavender) !important; }
+.text-mint-green { color: var(--mint-green) !important; }
+.text-peach { color: var(--peach) !important; }
+.text-sky-blue { color: var(--sky-blue) !important; }
+.text-lemon-yellow { color: var(--lemon-yellow) !important; }
+.text-coral { color: var(--coral) !important; }
+.text-sage { color: var(--sage) !important; }
+
+/* Font Weights */
+.font-thin { font-weight: var(--font-weight-thin); }
+.font-light { font-weight: var(--font-weight-light); }
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+.font-extrabold { font-weight: var(--font-weight-extrabold); }
+.font-black { font-weight: var(--font-weight-black); }
+
+/* ========================================
+   LAYOUT & CONTAINERS
+   ======================================== */
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+
+.section-container {
+  min-height: 100vh;
+  position: relative;
+  padding: var(--spacing-3xl) 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding: 0 var(--spacing-lg);
+}
+
+/* ========================================
+   PAGE HEADER STYLES
+   ======================================== */
+
+.page-header {
+  text-align: center;
+  padding: var(--spacing-4xl) var(--spacing-xl) var(--spacing-3xl);
+  position: relative;
+  z-index: 10;
+}
+
+.page-title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-black);
+  color: var(--text-raven);
+  margin-bottom: var(--spacing-lg);
+  text-shadow: none;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.page-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--text-charcoal);
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: var(--font-weight-medium);
+  opacity: 0.9;
+  line-height: var(--line-height-relaxed);
+}
+
+.header-underline {
+  height: 3px;
+  width: 120px;
+  background: linear-gradient(90deg, var(--soft-pink), var(--lavender), var(--mint-green));
+  margin: var(--spacing-lg) auto;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-lavender);
+}
+
+/* ========================================
+   CARD STYLES - PASTEL THEME [web:178][web:179]
+   ======================================== */
+
+.card-base {
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-xl);
+  transition: var(--transition-normal);
+  border: 3px solid transparent;
+  background: var(--primary-white);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--mint-green);
+  box-shadow: var(--shadow-mint);
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-sage);
+  border-color: var(--sage);
+}
+
+.solid-card {
+  background: var(--primary-white);
+  border: 3px solid var(--soft-pink);
+  box-shadow: var(--shadow-soft-pink);
+}
+
+.solid-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-coral);
+  border-color: var(--coral);
+}
+
+/* Pastel Card Variants [web:178] */
+.card-soft-pink {
+  border-color: var(--soft-pink);
+  box-shadow: var(--shadow-soft-pink);
+}
+
+.card-soft-pink:hover {
+  box-shadow: 0 12px 35px rgba(255, 179, 186, 0.4);
+  border-color: var(--coral);
+}
+
+.card-lavender {
+  border-color: var(--lavender);
+  box-shadow: var(--shadow-lavender);
+}
+
+.card-lavender:hover {
+  box-shadow: 0 12px 35px rgba(191, 174, 217, 0.4);
+}
+
+.card-mint-green {
+  border-color: var(--mint-green);
+  box-shadow: var(--shadow-mint);
+}
+
+.card-mint-green:hover {
+  box-shadow: 0 12px 35px rgba(180, 242, 225, 0.4);
+  border-color: var(--sage);
+}
+
+.card-peach {
+  border-color: var(--peach);
+  box-shadow: var(--shadow-peach);
+}
+
+.card-peach:hover {
+  box-shadow: 0 12px 35px rgba(255, 209, 160, 0.4);
+}
+
+.card-sky-blue {
+  border-color: var(--sky-blue);
+  box-shadow: var(--shadow-sky);
+}
+
+.card-sky-blue:hover {
+  box-shadow: 0 12px 35px rgba(52, 152, 219, 0.4);
+}
+
+.card-lemon-yellow {
+  border-color: var(--lemon-yellow);
+  box-shadow: var(--shadow-lemon);
+}
+
+.card-lemon-yellow:hover {
+  box-shadow: 0 12px 35px rgba(255, 242, 179, 0.4);
+}
+
+.card-coral {
+  border-color: var(--coral);
+  box-shadow: var(--shadow-coral);
+}
+
+.card-coral:hover {
+  box-shadow: 0 12px 35px rgba(255, 181, 181, 0.4);
+}
+
+.card-sage {
+  border-color: var(--sage);
+  box-shadow: var(--shadow-sage);
+}
+
+.card-sage:hover {
+  box-shadow: 0 12px 35px rgba(200, 230, 201, 0.4);
+}
+
+/* ========================================
+   COMPONENT-SPECIFIC STYLES
+   ======================================== */
+
+/* Pie Chart Container */
+.pie-chart-container {
+  background: var(--primary-white);
+  border: 3px solid var(--soft-pink);
+  border-radius: var(--border-radius-2xl);
+  box-shadow: var(--shadow-soft-pink);
+  padding: var(--spacing-2xl) var(--spacing-xl);
+}
+
+.pie-chart-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  color: var(--text-raven);
+  line-height: var(--line-height-tight);
+}
+
+.pie-chart-subtitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-light);
+  text-align: center;
+  color: var(--text-charcoal);
+  line-height: var(--line-height-normal);
+}
+
+/* Director Cards */
+.director-container {
+  background: var(--primary-white);
+  border: 3px solid var(--lavender);
+  border-radius: var(--border-radius-2xl);
+  box-shadow: var(--shadow-lavender);
+  padding: var(--spacing-2xl) var(--spacing-xl);
+}
+
+.director-name {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-raven);
+  line-height: var(--line-height-snug);
+}
+
+.director-role {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-charcoal);
+  line-height: var(--line-height-normal);
+}
+
+.director-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  color: var(--text-matte);
+  font-size: var(--font-size-xs);
+}
+
+/* Stats Container */
+.stats-container {
+  background: var(--primary-white);
+  border: 3px solid var(--mint-green);
+  border-radius: var(--border-radius-2xl);
+  box-shadow: var(--shadow-mint);
+  padding: var(--spacing-3xl) var(--spacing-2xl);
+  position: relative;
+  min-height: 500px;
+}
+
+.stats-bubble {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  border-radius: var(--border-radius-full);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-slow);
+}
+
+.stats-value {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-black);
+  color: var(--text-dark-black);
+  line-height: var(--line-height-tight);
+}
+
+.stats-title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  opacity: 0.8;
+  color: var(--text-dark-black);
+  text-align: center;
+}
+
+/* ========================================
+   BUTTONS & INTERACTIVE ELEMENTS - PASTEL THEME
+   ======================================== */
+
+.btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--border-radius-full);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  text-decoration: none;
+  font-size: var(--font-size-base);
+  padding: var(--spacing-md) var(--spacing-xl);
+  line-height: 1;
+}
+
+.btn-pastel-primary {
+  background: linear-gradient(135deg, var(--soft-pink), var(--lavender));
+  color: var(--text-dark-black);
+  box-shadow: var(--shadow-soft-pink);
+}
+
+.btn-pastel-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lavender);
+  background: linear-gradient(135deg, var(--coral), var(--soft-pink));
+}
+
+.btn-pastel-secondary {
+  background: var(--primary-white);
+  color: var(--text-dark-black);
+  border: 2px solid var(--mint-green);
+  box-shadow: var(--shadow-mint);
+}
+
+.btn-pastel-secondary:hover {
+  background: var(--mint-green);
+  color: var(--text-dark-black);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sage);
+}
+
+/* Button Variants */
+.btn-mint {
+  background: var(--mint-green);
+  color: var(--text-dark-black);
+  box-shadow: var(--shadow-mint);
+}
+
+.btn-peach {
+  background: var(--peach);
+  color: var(--text-dark-black);
+  box-shadow: var(--shadow-peach);
+}
+
+.btn-sky {
+  background: var(--sky-blue);
+  color: var(--text-dark-black);
+  box-shadow: var(--shadow-sky);
+}
+
+/* ========================================
+   BADGES & TAGS - PASTEL THEME
+   ======================================== */
+
+.badge {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  background: var(--soft-pink);
+  color: var(--text-dark-black);
+  box-shadow: var(--shadow-soft-pink);
+  line-height: 1;
+}
+
+.badge-lavender {
+  background: var(--lavender);
+  color: var(--text-dark-black);
+}
+
+.badge-mint {
+  background: var(--mint-green);
+  color: var(--text-dark-black);
+}
+
+.badge-peach {
+  background: var(--peach);
+  color: var(--text-dark-black);
+}
+
+.badge-sky {
+  background: var(--sky-blue);
+  color: var(--text-dark-black);
+}
+
+.badge-lemon {
+  background: var(--lemon-yellow);
+  color: var(--text-dark-black);
+}
+
+.badge-coral {
+  background: var(--coral);
+  color: var(--text-dark-black);
+}
+
+.badge-sage {
+  background: var(--sage);
+  color: var(--text-dark-black);
+}
+
+/* ========================================
+   ICONS & VISUAL ELEMENTS
+   ======================================== */
+
+.icon-static {
+  color: var(--text-dark-black);
+  transition: var(--transition-fast);
+}
+
+.icon-static:hover {
+  color: var(--text-charcoal);
+  transform: scale(1.1);
+}
+
+.icon-pastel {
+  color: var(--soft-pink);
+  transition: var(--transition-fast);
+}
+
+.icon-pastel:hover {
+  color: var(--lavender);
+  transform: scale(1.1);
+}
+
+/* Icon Color Variants */
+.icon-mint { color: var(--mint-green); }
+.icon-peach { color: var(--peach); }
+.icon-sky { color: var(--sky-blue); }
+.icon-lemon { color: var(--lemon-yellow); }
+.icon-coral { color: var(--coral); }
+.icon-sage { color: var(--sage); }
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Spacing */
+.m-0 { margin: 0; } .p-0 { padding: 0; }
+.m-xs { margin: var(--spacing-xs); } .p-xs { padding: var(--spacing-xs); }
+.m-sm { margin: var(--spacing-sm); } .p-sm { padding: var(--spacing-sm); }
+.m-md { margin: var(--spacing-md); } .p-md { padding: var(--spacing-md); }
+.m-lg { margin: var(--spacing-lg); } .p-lg { padding: var(--spacing-lg); }
+.m-xl { margin: var(--spacing-xl); } .p-xl { padding: var(--spacing-xl); }
+
+/* Display */
+.block { display: block; } .inline { display: inline; }
+.inline-block { display: inline-block; } .flex { display: flex; }
+.inline-flex { display: inline-flex; } .grid { display: grid; }
+.hidden { display: none; }
+
+/* Flex Utilities */
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+
+/* Text Alignment */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+/* ========================================
+   ANIMATIONS & KEYFRAMES
+   ======================================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pastelPulse {
+  0%, 100% { box-shadow: var(--shadow-soft-pink); }
+  33% { box-shadow: var(--shadow-lavender); }
+  66% { box-shadow: var(--shadow-mint); }
+}
+
+/* Animation Classes */
+.fade-in { animation: fadeIn 0.6s ease-out forwards; }
+.slide-in-left { animation: slideInLeft 0.6s ease-out forwards; }
+.slide-in-right { animation: slideInRight 0.6s ease-out forwards; }
+.scale-in { animation: scaleIn 0.6s ease-out forwards; }
+.animate-pastel-pulse { animation: pastelPulse 3s ease-in-out infinite; }
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Mobile First Approach */
+@media (max-width: 640px) {
+  .container { padding-left: var(--spacing-sm); padding-right: var(--spacing-sm); }
+  .page-title { font-size: var(--font-size-3xl); }
+  .page-subtitle { font-size: var(--font-size-base); }
+  .section-container { padding: var(--spacing-xl) 0; }
+  .pie-chart-title { font-size: var(--font-size-xl); }
+  .pie-chart-subtitle { font-size: var(--font-size-base); }
+  .stats-bubble { width: 100px; height: 100px; }
+  .stats-value { font-size: var(--font-size-xl); }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .page-title { font-size: var(--font-size-3xl); }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .container { padding-left: var(--spacing-lg); padding-right: var(--spacing-lg); }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
